@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <title>UPOBRICO</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+  integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    <div id="menu">
+      <nav class="col-12 navbar navbar-expand-md navbar-dark bg-dark ">
+        <a class="navbar-brand d-block d-md-none" href="#">Menú de Gestión</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown mr-md-4 mr-lg-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkAlt" name="navbarDropdownMenuLinkAlt" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dar de alta</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAlt">
+                <a class="dropdown-item dropdown-item-ligth" href="#" id="formularioCliente" name="formularioCliente">Clientes</a>
+                <a class="dropdown-item" href="#" id="formularioOperario" name="formularioOperario">Operarios</a>
+                <a class="dropdown-item" href="#" id="formularioAdministrativo" name="formularioAdministrativo">Administrativo</a>
+                <a class="dropdown-item" href="#" id="formularioMaterial" name="formularioMaterial">Material</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown mr-md-4 mr-lg-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkMod" name="navbarDropdownMenuLinkMod" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modificar</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkMod">
+                <a class="dropdown-item dropdown-item-ligth" href="#" id="formularioClienteMod" name="formularioClienteMod">Cliente</a>
+                <a class="dropdown-item" href="#" id="formularioMaterialMod" name="formularioMaterialMod">Material</a>
+                <a class="dropdown-item" href="#" id="formularioCitaMod" name="formularioCitaMod">Cita</a>
+              </div>
+            </li>
+             <li class="nav-item dropdown mr-md-4 mr-lg-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkBor" name="navbarDropdownMenuLinkBor" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dar de baja</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkBor">
+                <a class="dropdown-item dropdown-item-ligth" href="#" id="formularioClienteBor" name="formularioClienteBor">Cliente</a>
+                <a class="dropdown-item" href="#" id="formularioOperarioBor" name="formularioOperarioBor">Operario</a>
+                <a class="dropdown-item" href="#" id="formularioAdministrativoBor" name="formularioAdministrativoBor">Administrativo</a>
+                <a class="dropdown-item" href="#" id="formularioMaterialBor" name="formularioMaterialBor">Material</a>
+                <a class="dropdown-item" href="#" id="formularioCitaBor" name="formularioCitaBor">Cita</a>
+              </div>
+            </li>
+
+          
+            <li class="nav-item mr-md-4 mr-lg-5">
+              <a class="nav-link" href="#" id="formularioCita" name="formularioCita">Crear Cita</a>
+            </li>
+            <li class="nav-item dropdown mr-md-4 mr-lg-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkAsig" name="navbarDropdownMenuLinkAsig" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Asignaciones</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAsig">
+                <a class="dropdown-item dropdown-item-ligth" href="#" id="formularioAsignarOperario" name="formularioAsignarOperario">Operario</a>
+                <a class="dropdown-item" href="#" id="formularioAsignarAdministrativo" name="formularioAsignarAdministrativo">Administrativo</a>
+                <a class="dropdown-item" href="#" id="formularioAsignarMaterial" name="formularioAsignarMaterial">Material</a>
+              </div>
+            </li>
+            <li class="nav-item mr-md-4 mr-lg-5">
+              <a class="nav-link" href="#" id="formularioAsignarIncidencia" name="formularioAsignarIncidencia">Apuntar Incidencia</a>
+            </li>            
+            <li class="nav-item dropdown mr-md-4 mr-lg-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" name="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listados</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item dropdown-item-ligth" href="#" id="listaClientes" name="listaClientes">Clientes</a>
+                <a class="dropdown-item" href="#" id="listaOperario" name="listaOperario">Operarios</a>
+                <a class="dropdown-item" href="#" id="listaCitas" name="listaCitas">Citas</a>
+                <a class="dropdown-item" href="#" id="listaMateriales" name="listaMateriales">Materiales</a>
+                <a class="dropdown-item" href="#" id="formularioCitasCliente" name="formularioCitasCliente">Citas de un cliente</a>
+                <a class="dropdown-item" href="#" id="formularioListadoCitas" name="formularioListadoCitas">Citas en un periodo</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>  <!-- fin de la barra de navegacion --> 
+
+    <div id="divGestion" class="container mt-5">
+      <div id="jumbo" class="jumbotron text-center bg-white">
+      	<img src="img/logo.png" alt="UPOBRICO">
+        <h3>Sistema de gestión</h3>
+        <h4> Elija una opción.</h4>
+      </div>
+    </div>
+
+<div id="formularios" class="formularios">
+
+</div>    
+
+<div id="listados" class="listados">
+
+</div>   
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="jquery/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+</body>
+</html>

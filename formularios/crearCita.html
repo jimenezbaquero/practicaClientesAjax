@@ -1,0 +1,39 @@
+<!-- CREAR CITA-->
+<div class="row col-12 divFrm" id="divFrmCita">
+    <form class="col-12" method="post" id="frmCita">
+      <h1>Creación de una Cita</h1>
+      <div id="camposCita">
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtNumCita">Nº CITA:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtNumCita" name="txtNumCita"  type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtFechaCita">FECHA:</label>
+          <div class="col-md-10">
+            <input type="date" class="form-control" id="txtFechaCita" name="txtFechaCita" >
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtClienteCita">CLIENTE:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtClienteCita" name="txtClienteCita" placeholder="12345678X" type="text" maxlength="50">
+          </div>
+        </div>
+         <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtDescripcionCita">DESCRIPCION:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtDescripcionCita" name="txtDescripcionCita" type="text" maxlength="50">
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-end">
+        <div class="form-group mr-3">
+          <input type="button" id="btnAceptarCita" name="btnAceptarCita" class="btn btn-primary " value="Aceptar"/>
+          <input type="button" id="btnBorrarCita" name="btnBorrarCita" class="btn btn-secundary mr-2 ml-2" value="Borrar"/>
+          <input type="button" id="btnCancelarCita" name="btnCancelarCita" class="btn btn-danger" value="Cancelar"/>
+        </div>
+      </div>
+    </form>
+  </div>

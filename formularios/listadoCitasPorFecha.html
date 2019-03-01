@@ -1,0 +1,28 @@
+<!-- LISTADO CITAS POR FECHA-->
+<div class="row col-12 divFrm" id="divFrmFechasCitas">
+    <form class="col-12" method="post" id="frmFechasCitas">
+      <div id="camposFechasCitas">
+        <legend>Listado de Citas en un periodo</legend>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtFechaInicioCitasPer">FECHA INICIAL:</label>
+          <div class="col-md-10">
+            <input type="date" class="form-control" id="txtFechaInicioCitasPer" name="txtFechaInicioCitasPer">
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtFechaFinCitasPer">FECHA FINAL:</label>
+          <div class="col-md-10">
+            <input type="date" class="form-control" id="txtFechaFinCitasPer" name="txtFechaFinCitasPer">
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-end">
+        <div class="form-group-inline mr-3">
+          <input type="button" id="btnAceptarCitas" name="btnAceptarCitas" class="mb-2 mr-2 btn btn-primary " value="Aceptar"/>
+          <input type="button" id="btnBorrarCitas" name="btnBorrarCitas" class="mb-2 btn btn-secundary mr-2 " value="Borrar"/>
+          <input type="button" id="btnCancelarCitas" name="btnCancelarCitas" class="btn btn-danger" value="Cancelar"/>
+        </div>
+      </div>
+    </form>
+  </div>

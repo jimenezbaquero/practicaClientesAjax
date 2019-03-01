@@ -1,0 +1,39 @@
+<!-- ALTA CLIENTE-->
+<div class="row col-12 divFrm" id="divFrmCliente">
+    <form class="col-12" method="post" id="frmAltaCliente">
+        <h1>Alta de Cliente</h1>
+            <div id="camposCliente">
+                <div class="form-group row align-items-center">
+                  <label class="control-label col-md-2 " for="txtDniCli">DNI:</label>
+                  <div class="col-md-10">
+                    <input class="form-control" id="txtDniCli" name="txtDniCli" placeholder="12345678X" type="text" maxlength="9">
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label class="control-label col-md-2 " for="txtNombreCli">NOMBRE:</label>
+                  <div class="col-md-10">
+                    <input class="form-control" id="txtNombreCli" name="txtNombreCli" placeholder="Nombre" type="text" maxlength="50">
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label class="control-label col-md-2 " for="txtDireccionCli">DIRECCION:</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" id="txtDireccionCli" name="txtDireccionCli" placeholder="Direccion" maxlength="50">
+                  </div>
+                </div>
+                <div class="form-group row align-items-center">
+                  <label class="control-label col-md-2 " for="txtTfnoCli">TELEFONO:</label>
+                  <div class="col-md-10">
+                    <input class="form-control" id="txtTfnoCli" name="txtTfnoCli" placeholder="666666666" type="text" maxlength="9"/>
+                  </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-end">
+                <div class="form-group mr-3">
+                  <input type="button" id="btnAceptarCliente" name="btnAceptarCliente" class="btn btn-primary " value="Aceptar"/>
+                  <input type="button" id="btnBorrarCliente" name="btnBorrarCliente" class="btn btn-secundary mr-2 ml-2" value="Borrar"/>
+                  <input type="button" id="btnCancelarCliente" name="btnCancelarCliente" class="btn btn-danger" value="Cancelar"/>
+                </div>
+            </div>
+    </form>
+</div>
