@@ -24,10 +24,14 @@ function validarOperario(oEvento) {
     var oExpReg = /^[a-zA-Z0-9\s]{2,50}$/;
 
     if (oExpReg.test(sNombre) == false) {
+              
+        if( bValido = true ){
+        frmAltaOperario.txtNombreOp.focus();
         bValido = false;
+        }
 
         frmAltaOperario.txtNombreOp.classList.add("error");
-        frmAltaOperario.txtNombreOp.focus();
+
         sError += "\n El nombre debe ser alfanumérico entre 2 y 50 caracteres.";
     }
    
@@ -66,10 +70,14 @@ function validarCliente(oEvento) {
     var oExpReg = /^[a-zA-Z0-9\s]{2,50}$/;
 
     if (oExpReg.test(sNombre) == false) {
+       
+       if( bValido = true ){
+        frmAltaCliente.txtNombreCli.focus();
         bValido = false;
+        }
 
         frmAltaCliente.txtNombreCli.classList.add("error");
-        frmAltaCliente.txtNombreCli.focus();
+
         sError += "\n El nombre debe ser alfanumérico entre 2 y 50 caracteres.";
     }
 
@@ -142,10 +150,14 @@ function validarAltaMaterial(oEvento) {
     var oExpReg = /^[a-zA-Z0-9\s]{2,50}$/;
 
     if (oExpReg.test(sNombre) == false) {
-        bValido = false;
 
-        frmAltaMaterial.txtNombreMat.classList.add("error");
+        if( bValido = true ){
         frmAltaMaterial.txtNombreMat.focus();
+        bValido = false;
+        }
+        
+        frmAltaMaterial.txtNombreMat.classList.add("error");
+        
         sError += "\n El nombre debe ser alfanumérico entre 2 y 50 caracteres.";
     }
 	//Validar Precio de Alta Material
@@ -153,10 +165,14 @@ function validarAltaMaterial(oEvento) {
     var oExpReg = /^\d+(\.\d{1,2})?$/;
 
     if (oExpReg.test(sPrecio) == false) {
-        bValido = false;
 
-        frmAltaMaterial.txtPrecioMat.classList.add("error");
+        if( bValido = true ){
         frmAltaMaterial.txtPrecioMat.focus();
+        bValido = false;
+        }
+        
+        frmAltaMaterial.txtPrecioMat.classList.add("error");
+        
         sError += "\n El Precio debe ser numérico y contener como maximo 2 decimales.";
     }
 	//Validar Descripcion de Alta Material
@@ -164,10 +180,14 @@ function validarAltaMaterial(oEvento) {
     var oExpReg = /^[a-zA-Z0-9\s]{1,50}$/;
 
     if (oExpReg.test(sDes) == false) {
+       
+        if( bValido = true ){
+        frmAltaMaterial.txtDescripcionMat.focus();
         bValido = false;
+        }
 
         frmAltaMaterial.txtDescripcionMat.classList.add("error");
-        frmAltaMaterial.txtDescripcionMat.focus();
+        
         sError += "\n Añade una descripción.";
     }
 	
