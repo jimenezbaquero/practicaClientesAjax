@@ -2,7 +2,7 @@ $("#btnAceptarCliente").click(altaCliente);
 
 function altaCliente()
 {
-    //validarCliente();
+    validarCliente();
 
     var oCliente = {
         NIF: document.getElementById("txtDniCli").value.trim(),

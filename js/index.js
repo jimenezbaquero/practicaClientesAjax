@@ -19,7 +19,7 @@ $(function() {
     $("#formularioCitasCliente").click(cargaFormularioCitasCliente);
     $("#formularioListadoCitas").click(cargaFormularioListadoCitas);
 
-    
+    });
     
     var oAjax = instanciarXHR();
 
@@ -441,7 +441,7 @@ $(function() {
         }
     }
 
-});
+
 
 function instanciarXHR() {
 	var xhttp = null;
