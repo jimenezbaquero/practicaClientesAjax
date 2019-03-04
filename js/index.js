@@ -18,8 +18,64 @@ $(function() {
     $("#formularioAsignarIncidencia").click(cargaFormularioAsignarIncidencia);
     $("#formularioCitasCliente").click(cargaFormularioCitasCliente);
     $("#formularioListadoCitas").click(cargaFormularioListadoCitas);
+
+    
     
     var oAjax = instanciarXHR();
+
+    function cancelar()
+    {
+        ocultarCapas();
+        mostrarJumbotron();
+    }
+
+    function ocultarCapas()
+    {
+        borrarCampos();
+        document.getElementById("divFrmCliente").style.display = "none";
+        document.getElementById("divFrmOperario").style.display = "none";
+        document.getElementById("divFrmMaterial").style.display = "none";
+        document.getElementById("divFrmCita").style.display = "none";
+        document.getElementById("divFrmFechasCitas").style.display = "none";
+        document.getElementById("jumbo").style.display = "none";
+        document.getElementById("divFrmIncidencia").style.display = "none";
+        document.getElementById("divFrmModificarMaterial").style.display = "none";
+        document.getElementById("divFrmModificarCliente").style.display = "none";
+        document.getElementById("divFrmModificarCita").style.display = "none";
+        document.getElementById("divFrmBorrarCita").style.display = "none";
+        document.getElementById("divFrmBorrarCliente").style.display = "none";
+        document.getElementById("divFrmBorrarOperario").style.display = "none";
+        document.getElementById("divFrmBorrarAdmin").style.display = "none";
+        document.getElementById("divFrmBorrarMaterial").style.display = "none";
+        document.getElementById("divFrmModificarDatosCliente").style.display = "none";
+        document.getElementById("divFrmCitasCliente").style.display = "none";
+    }
+
+    function mostrarJumbotron()
+    {
+        ocultarCapas();
+        document.getElementById("jumbo").style.display = "block";
+    }
+
+    function borrarCampos()
+    {
+        limpiarErrores();
+        limpiarErrores();
+        var array = document.getElementsByTagName("form");
+        for (var i=0;i<array.length;i++)
+            array[i].reset();
+    }
+
+    function limpiarErrores() 
+    {
+        var array = document.getElementsByClassName("error");
+        for (var i=0;i<array.length;i++)
+            array[i].classList.remove("error");
+
+        array = document.getElementsByClassName("error");
+        for (var i=0;i<array.length;i++)
+            array[i].classList.remove("error");
+    }
 
     function cargaFormularioCliente()
     {
@@ -33,6 +89,9 @@ $(function() {
             $("<div>").appendTo('#formularios').load("formularios/altaCliente.html", function(){
                 $.getScript("js/altaCliente.js");
             });
+                //$("#jumbo").show("normal");
+                //cancelar();
+           
             
         } else {
             // Lo muestro si está oculto
