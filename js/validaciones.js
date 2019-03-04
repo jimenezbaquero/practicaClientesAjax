@@ -41,29 +41,6 @@ function validarOperario(oEvento) {
 
 }
 
-	//Validar nombre del Operario
-    var sNombre = frmAltaAdministrativo.txtNombreAdm.value.trim();
-    var oExpReg = /^[a-zA-Z0-9\s]{2,50}$/;
-
-    if (oExpReg.test(sNombre) == false) {
-        bValido = false;
-
-        frmAltaAdministrativo.txtNombreAdm.classList.add("error");
-        frmAltaAdministrativo.txtNombreAdm.focus();
-        sError += "\n El nombre debe ser alfanumérico entre 2 y 50 caracteres.";
-    }
-   
-    if (bValido == false) {
-        // Mostrar errores
-        alert(sError);
-
-        //Cancelar submit
-        oE.preventDefault();
-    }
-
-}
-
-
 //Validar Alta Cliente
 function validarCliente(oEvento) {
 
@@ -203,7 +180,6 @@ function validarAltaMaterial(oEvento) {
     }
 
 }
-
 
 ///MODIFICAR 
 
