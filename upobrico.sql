@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-03-2019 a las 14:05:21
+-- Tiempo de generación: 04-03-2019 a las 09:42:36
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -25,33 +25,34 @@ drop database  if exists upobrico;
 create database upobrico;
 use upobrico;
 
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cita`
+-- Estructura de tabla para la tabla `citas`
 --
 
-CREATE TABLE `cita` (
-  `NUMERO` int(10) NOT NULL,
+CREATE TABLE `citas` (
+  `NUMERO` int(3) NOT NULL,
   `FECHA` date NOT NULL,
   `CLIENTE` varchar(9) NOT NULL,
   `DESCRIPCION` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `cita`
+-- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `cita` (`NUMERO`, `FECHA`, `CLIENTE`, `DESCRIPCION`) VALUES
+INSERT INTO `citas` (`NUMERO`, `FECHA`, `CLIENTE`, `DESCRIPCION`) VALUES
 (1, '2019-03-03', '12345678A', 'Montar estantería clásica');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `cliente` (
+CREATE TABLE `clientes` (
   `DNI` varchar(9) NOT NULL,
   `NOMBRE` varchar(30) NOT NULL,
   `DIRECCION` varchar(30) NOT NULL,
@@ -59,19 +60,31 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `cliente` (`DNI`, `NOMBRE`, `DIRECCION`, `TELEFONO`) VALUES
+INSERT INTO `clientes` (`DNI`, `NOMBRE`, `DIRECCION`, `TELEFONO`) VALUES
 ('12345678A', 'Juan', 'Calle Luna', 9223242);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `material`
+-- Estructura de tabla para la tabla `incidencias`
 --
 
-CREATE TABLE `material` (
+CREATE TABLE `incidencias` (
+  `NUM_INCIDENCIA` int(2) NOT NULL,
+  `COD_CITA` int(3) NOT NULL,
+  `DESCRIPCION` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materiales`
+--
+
+CREATE TABLE `materiales` (
   `CODIGO` varchar(6) NOT NULL,
   `NOMBRE` varchar(30) NOT NULL,
   `PRECIO` decimal(10,2) NOT NULL,
@@ -79,10 +92,10 @@ CREATE TABLE `material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `material`
+-- Volcado de datos para la tabla `materiales`
 --
 
-INSERT INTO `material` (`CODIGO`, `NOMBRE`, `PRECIO`, `DESCRIPCION`) VALUES
+INSERT INTO `materiales` (`CODIGO`, `NOMBRE`, `PRECIO`, `DESCRIPCION`) VALUES
 ('CBA321', 'tuerca acero inoxidable', '1.00', 'Contratuercas de acero inoxidable'),
 ('ABC123', 'tornillo cabeza plana', '1.20', 'Tornillo tirafondo de cabeza plan'),
 ('ASD123', 'tablon de madera', '2.66', 'Tablón Flandes tratado y cepillado');
@@ -90,22 +103,53 @@ INSERT INTO `material` (`CODIGO`, `NOMBRE`, `PRECIO`, `DESCRIPCION`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios_empresa`
+-- Estructura de tabla para la tabla `materiales_citas`
 --
 
-CREATE TABLE `usuarios_empresa` (
+CREATE TABLE `materiales_citas` (
+  `COD_MATERIAL` varchar(6) NOT NULL,
+  `COD_CITA` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `operarios`
+--
+
+CREATE TABLE `operarios` (
   `DNI` varchar(9) NOT NULL,
-  `NOMBRE` varchar(30) NOT NULL,
-  `TIPO` varchar(20) NOT NULL
+  `NOMBRE` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuarios_empresa`
+-- Volcado de datos para la tabla `operarios`
 --
 
-INSERT INTO `usuarios_empresa` (`DNI`, `NOMBRE`, `TIPO`) VALUES
-('87654321B', 'Pepe', 'Operario'),
-('23456789C', 'Manuel', 'Administrativo');
+INSERT INTO `operarios` (`DNI`, `NOMBRE`) VALUES
+('87654321B', 'Pepe'),
+('23456789C', 'Manuel');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `operarios_citas`
+--
+
+CREATE TABLE `operarios_citas` (
+  `DNI_OPERARIO` varchar(9) NOT NULL,
+  `COD_CITA` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `incidencias`
+--
+ALTER TABLE `incidencias`
+  ADD PRIMARY KEY (`NUM_INCIDENCIA`,`COD_CITA`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
