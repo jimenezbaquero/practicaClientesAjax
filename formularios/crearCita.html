@@ -2,6 +2,7 @@
 <div class="row col-12 divFrm" id="divFrmCita">
     <form class="col-12" method="post" id="frmCita">
       <h1>Creación de una Cita</h1>
+
       <div id="camposCita">
         <div class="form-group row align-items-center">
           <label class="control-label col-md-2 " for="txtNumCita">Nº CITA:</label>
@@ -15,12 +16,72 @@
             <input type="date" class="form-control" id="txtFechaCita" name="txtFechaCita" >
           </div>
         </div>
+
+        <hr/>
+
         <div class="form-group row align-items-center">
           <label class="control-label col-md-2 " for="txtClienteCita">CLIENTE:</label>
-          <div class="col-md-10">
+          <div class="col-md-9">
             <input class="form-control" id="txtClienteCita" name="txtClienteCita" placeholder="12345678X" type="text" maxlength="50">
           </div>
+           <div class="col-md-1">
+            <img id="lupa" class="img-fluid rounded d-block " alt="Buscar" src="img/lupa.png"/>
+          </div>
         </div>
+
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtNombreCita">NOMBRE:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtNombreCita" name="txtNombreCita"  type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtApellidoCita">APELLIDOS:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtApellidoCita" name="txtApellidoCita"  type="text" disabled>
+          </div>
+        </div>
+      <hr/>
+          <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="lstOperarioAgregarCita">OPERARIOS:</label>
+          
+            <select class="form-control col-md-9" id="lstOperarioAgregarCita" name="lstOperarioAgregarCita" size="1">
+            </select> 
+            
+            
+            <input type="button" id="btnAgregarOperario" name="btnAgregarOperario" class="btn btn-primary col-md-1" value="+"/>
+          
+          </div>
+            <div class="form-group row align-items-center">
+            <select multiple class="form-control col-md-11" id="lstOperarioCita" name="lstOperarioCita" size="4">
+            </select> 
+            
+            <input type="button" id="btnQuitarOperario" name="btnQuitarOperario" class="btn btn-primary col-md-1" value="-"/>
+          
+          </div>
+
+       <hr/>
+          <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="lstOperarioAgregarCita">MATERIALES:</label>
+          
+            <select class="form-control col-md-9" id="lstMaterialAgregarCita" name="lstMaterialAgregarCita" size="1">
+            </select>  
+            
+            <input type="button" id="btnAgregarMaterial" name="btnAgregarMaterial" class="btn btn-primary col-md-1 " value="+"/>
+          
+          
+          </div>
+
+            <div class="form-group row align-items-center">
+            <select multiple class="form-control col-md-11" id="lstMaterialCita" name="lstMaterialCita" size="4">
+            </select>  
+            
+            <input type="button" id="btnQuitarMaterial" name="btnQuitarMaterial" class="btn btn-primary col-md-1" value="-"/>
+         
+          </div>
+        </fieldset>
+        
+       
          <div class="form-group row align-items-center">
           <label class="control-label col-md-2 " for="txtDescripcionCita">DESCRIPCION:</label>
           <div class="col-md-10">
