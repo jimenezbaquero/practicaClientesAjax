@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2019 a las 09:42:36
+-- Tiempo de generación: 05-03-2019 a las 08:51:12
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -24,8 +24,6 @@ SET time_zone = "+00:00";
 drop database  if exists upobrico;
 create database upobrico;
 use upobrico;
-
-
 -- --------------------------------------------------------
 
 --
@@ -96,9 +94,9 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`CODIGO`, `NOMBRE`, `PRECIO`, `DESCRIPCION`) VALUES
-('CBA321', 'tuerca acero inoxidable', '1.00', 'Contratuercas de acero inoxidable'),
 ('ABC123', 'tornillo cabeza plana', '1.20', 'Tornillo tirafondo de cabeza plan'),
-('ASD123', 'tablon de madera', '2.66', 'Tablón Flandes tratado y cepillado');
+('ASD123', 'tablon de madera', '2.66', 'Tablón Flandes tratado y cepillado'),
+('CBA321', 'tuerca acero inoxidable', '1.00', 'Contratuercas de acero inoxidable');
 
 -- --------------------------------------------------------
 
@@ -127,8 +125,8 @@ CREATE TABLE `operarios` (
 --
 
 INSERT INTO `operarios` (`DNI`, `NOMBRE`) VALUES
-('87654321B', 'Pepe'),
-('23456789C', 'Manuel');
+('23456789C', 'Manuel'),
+('87654321B', 'Pepe');
 
 -- --------------------------------------------------------
 
@@ -146,10 +144,46 @@ CREATE TABLE `operarios_citas` (
 --
 
 --
+-- Indices de la tabla `citas`
+--
+ALTER TABLE `citas`
+  ADD PRIMARY KEY (`NUMERO`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`DNI`);
+
+--
 -- Indices de la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
   ADD PRIMARY KEY (`NUM_INCIDENCIA`,`COD_CITA`);
+
+--
+-- Indices de la tabla `materiales`
+--
+ALTER TABLE `materiales`
+  ADD PRIMARY KEY (`CODIGO`);
+
+--
+-- Indices de la tabla `materiales_citas`
+--
+ALTER TABLE `materiales_citas`
+  ADD PRIMARY KEY (`COD_MATERIAL`,`COD_CITA`);
+
+--
+-- Indices de la tabla `operarios`
+--
+ALTER TABLE `operarios`
+  ADD PRIMARY KEY (`DNI`);
+
+--
+-- Indices de la tabla `operarios_citas`
+--
+ALTER TABLE `operarios_citas`
+  ADD PRIMARY KEY (`DNI_OPERARIO`,`COD_CITA`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
