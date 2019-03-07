@@ -1,0 +1,100 @@
+<!-- CREAR CITA-->
+<div class="row col-12 divFrm" id="divFrmModificarCita2">
+    <form class="col-12" method="post" id="frmModificarCita2">
+      <h1>Creación de una Cita</h1>
+
+      <div id="camposCita">
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtNumCitaMod">Nº CITA:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtNumCitaMod" name="txtNumCitaMod"  type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtFechaCitaMod">FECHA:</label>
+          <div class="col-md-10">
+            <input type="date" class="form-control" id="txtFechaCitaMod" name="txtFechaCitaMod" >
+          </div>
+        </div>
+
+        <hr/>
+
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtClienteCitaMod">CLIENTE:</label>
+          <div class="col-md-9">
+            <input class="form-control" id="txtClienteCitaMod" name="txtClienteCitaMod" placeholder="12345678X" type="text" maxlength="50">
+          </div>
+           <div class="col-md-1">
+            <img id="lupaMod" class="img-fluid rounded d-block " alt="Buscar" src="img/lupa.png"/>
+          </div>
+        </div>
+
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtNombreCitaMod">NOMBRE:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtNombreCitaMod" name="txtNombreCitaMod"  type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtDireccionCitaMod">DIRECCION:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtDireccionCitaMod" name="txtDireccionCitaMod"  type="text" disabled>
+          </div>
+        </div>
+      <hr/>
+          <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="lstOperarioAgregarCitaMod">OPERARIOS:</label>
+          
+            <select class="form-control col-md-9" id="lstOperarioAgregarCitaMod" name="lstOperarioAgregarCitaMod" size="1">
+            </select> 
+            
+            
+            <input type="button" id="btnAgregarOperarioMod" name="btnAgregarOperarioMod" class="btn btn-primary col-md-1" value="+"/>
+          
+          </div>
+            <div class="form-group row align-items-center">
+            <select multiple class="form-control col-md-11" id="lstOperarioCitaMod" name="lstOperarioCitaMod" size="4">
+            </select> 
+            
+            <input type="button" id="btnQuitarOperarioMod" name="btnQuitarOperarioMod" class="btn btn-primary col-md-1" value="-"/>
+          
+          </div>
+
+       <hr/>
+          <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="lstOperarioAgregarCitaMod">MATERIALES:</label>
+          
+            <select class="form-control col-md-9" id="lstMaterialAgregarCitaMod" name="lstMaterialAgregarCitaMod" size="1">
+            </select>  
+            
+            <input type="button" id="btnAgregarMaterialMod" name="btnAgregarMaterialMod" class="btn btn-primary col-md-1 " value="+"/>
+          
+          
+          </div>
+
+            <div class="form-group row align-items-center">
+            <select multiple class="form-control col-md-11" id="lstMaterialCitaMod" name="lstMaterialCitaMod" size="4">
+            </select>  
+            
+            <input type="button" id="btnQuitarMaterialMod" name="btnQuitarMaterialMod" class="btn btn-primary col-md-1" value="-"/>
+         
+          </div>
+        </fieldset>
+        
+       
+         <div class="form-group row align-items-center">
+          <label class="control-label col-md-2 " for="txtDescripcionCitaMod">DESCRIPCION:</label>
+          <div class="col-md-10">
+            <input class="form-control" id="txtDescripcionCitaMod" name="txtDescripcionCitaMod" type="text" maxlength="50">
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-end">
+        <div class="form-group mr-3">
+          <input type="button" id="btnAceptarCitaMod" name="btnAceptarCitaMod" class="btn btn-primary " value="Aceptar"/>
+          <input type="button" id="btnBorrarCitaMod" name="btnBorrarCitaMod" class="btn btn-secundary mr-2 ml-2" value="Borrar"/>
+          <input type="button" id="btnCancelarCitaMod" name="btnCancelarCitaMod" class="btn btn-danger" value="Cancelar"/>
+        </div>
+      </div>
+    </form>
+  </div>

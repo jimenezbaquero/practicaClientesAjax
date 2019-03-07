@@ -20,6 +20,10 @@ function altaOperario()
         } else {
             alert(oDatos.mensaje);
             frmAltaOperario.reset();
+            if(localStorage['operarios']!=undefined){
+                localStorage['operarios']="";
+                cargarComboOperarios();
+            }      
             frmAltaOperario.style.display="none";
             $("#divGestion").show("normal");
         }

@@ -10,7 +10,6 @@ $("#btnAgregarMaterial").click(agregarMaterial);
 $("#btnQuitarMaterial").click(quitarMateriales);
 
 
-
 cargarComboOperarios();
 cargarComboMateriales();
 
@@ -101,7 +100,7 @@ function validarCita(){
 
 function cargarComboOperarios(){
 
-	if (localStorage["operarios"] != undefined) {
+	if (localStorage["operarios"] != undefined && localStorage["operarios"] !="") {
         $("#lstOperarioAgregarCita").html(localStorage["operarios"]);
     } else {
     	var oAjax = instanciarXHR();
@@ -256,8 +255,8 @@ function quitarMateriales(){
 function borrarDatos(){
     frmCita.reset();
     obtenerNumeroCita();
-    sessionStorage["materiales"]="";
-    sessionStorage["operarios"]="";
-    $("#lstMaterialCita").html(sessionStorage['materiales']);
-    $("#lstOperarioCita").html(sessionStorage['operarios']);
+    sessionStorage['materiales']="";
+    sessionStorage['operarios']="";
+    $("#lstMaterialCita").html("");
+    $("#lstOperarioCita").html("");
 }

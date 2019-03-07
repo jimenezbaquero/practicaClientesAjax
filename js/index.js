@@ -18,6 +18,9 @@ $(function() {
     $("#formularioAsignarIncidencia").click(cargaFormularioAsignarIncidencia);
     $("#formularioCitasCliente").click(cargaFormularioCitasCliente);
     $("#formularioListadoCitas").click(cargaFormularioListadoCitas);
+    
+
+
 
     });
     
@@ -196,6 +199,7 @@ $(function() {
 
     function cargaFormularioModificarCita()
     {
+
         // Oculto todos los formularios menos este
         $("form:not('#frmModificarCita')").hide("normal");
         //Oculto la imagen
@@ -211,6 +215,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmModificarCita').show("normal");
         }
+        cargarComboCitasModificar();
     }
 
     function cargaFormularioBorrarCliente()
@@ -310,6 +315,7 @@ $(function() {
 
     function cargaFormularioCita()
     {
+
         // Oculto todos los formularios menos este
         $("form:not('#frmCita')").hide("normal");
         //Oculto la imagen
@@ -321,7 +327,7 @@ $(function() {
                 $.getScript("js/crearCita.js");
             });
             
-        } else {
+        } else {            
             // Lo muestro si está oculto
             $('#frmCita').show("normal");
         }
@@ -454,4 +460,14 @@ function instanciarXHR() {
 	}
 
 	return xhttp;
+}
+
+function cargarComboCitasModificar(){
+
+    $.get("php/rellenarCitas.php",null,procesoRespuestaRellenarCitasMod,"html");
+}
+
+function procesoRespuestaRellenarCitasMod(sDatos){
+    $("#lstCitasMod").html(sDatos);
+
 }
