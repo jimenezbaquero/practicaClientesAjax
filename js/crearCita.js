@@ -17,6 +17,21 @@ cargarComboMateriales();
 function procesoCrearCita(){
 
     if(validarCita()){
+       
+        var optionsOperario = frmCita.lstOperarioCita.options;
+        var optionsMateriales = frmCita.lstMaterialCita.options;
+        var aOperarios =[];
+        var aMateriales = [];
+
+        for (var i=0;i<optionsOperario.length;i++)
+            aOperarios.push(optionsOperario[i].value);
+
+
+        for (var i=0;i<optionsMateriales.length;i++)
+
+            aMateriales.push(optionsMateriales[i].value);
+
+
         var datos={
             numero:frmCita.txtNumCita.value,
             cliente:frmCita.txtClienteCita.value,
@@ -27,13 +42,16 @@ function procesoCrearCita(){
 
 
 
-        var sDatos ="datos="+JSON.stringify(datos);
+        var sDatos = "datos="+JSON.stringify(datos);
+        var sOperarios = "operarios="+JSON.stringify(aOperarios);
+        var sMateriales = "materiales="+JSON.stringify(aMateriales);
+
 
         $.ajax({
             url: "php/crearCita.php",
             type: "POST",
             async: false,
-            data:  sDatos,
+            data:  sDatos+"&"+sOperarios+"&"+sMateriales,
             dataType: "json",
             success: procesoRespuestaCita
         });
@@ -46,8 +64,9 @@ function procesoRespuestaCita(oDatos){
         alert(oDatos.mensaje);
     } else {
         alert(oDatos.mensaje);
-        frmCita.reset();
-        $("#divFrmCita").hide();
+        borrarDatos();
+        $("#frmCita").hide("normal");
+         $("#divGestion").show("normal");
     }
 }
 
