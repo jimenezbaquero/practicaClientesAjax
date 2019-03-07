@@ -330,6 +330,8 @@ $(function() {
         } else {            
             // Lo muestro si está oculto
             $('#frmCita').show("normal");
+            cargarComboMateriales();
+            cargarComboOperarios();
         }
     }
 

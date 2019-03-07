@@ -10,7 +10,7 @@ $password  = "";
 $conexion = mysqli_connect($servidor, $usuario, $password,$basedatos) or die(mysqli_error($conexion));
 mysqli_set_charset($conexion,"utf8");
 
-$sql = "SELECT * FROM materiales ";
+$sql = "SELECT * FROM materiales order by nombre";
 $resultado = mysqli_query($conexion,$sql);
 $codigo ="";
 
