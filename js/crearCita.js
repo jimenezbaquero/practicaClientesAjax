@@ -1,6 +1,8 @@
-//# sourceURL=altaProducto.js;
+//# sourceURL=altaProducto.js; if (sessionStorage["materiales"] != undefined) {
+borrarDatos();
 
 $("#btnAceptarCita").click(procesoCrearCita);
+$("#btnBorrarCita").click(borrarDatos);
 $("#lupa").click(buscarCliente);
 $("#btnAgregarOperario").click(agregarOperario);
 $("#btnQuitarOperario").click(quitarOperarios);
@@ -12,16 +14,26 @@ $("#btnQuitarMaterial").click(quitarMateriales);
 cargarComboOperarios();
 cargarComboMateriales();
 
-
 function procesoCrearCita(){
 
-    if(validarCita){
+    if(validarCita()){
+        var datos={
+            numero:frmCita.txtNumCita.value,
+            cliente:frmCita.txtClienteCita.value,
+            fecha:frmCita.txtFechaCita.value,
+            descripcion:frmCita.txtDescripcionCita.value.trim()
+        };
+
+
+
+
+        var sDatos ="datos="+JSON.stringify(datos);
 
         $.ajax({
             url: "php/crearCita.php",
             type: "POST",
             async: false,
-            data:  $("#frmCita").serialize(),
+            data:  sDatos,
             dataType: "json",
             success: procesoRespuestaCita
         });
@@ -45,18 +57,24 @@ function validarCita(){
     var sError = "";
     var bValido = true;
 
-    if (frmCita.txtNombreCita=""){
-        sError += "Debe introducir un cliente";
+    if (frmCita.txtNombreCita.value==""){
+        sError += "Debe introducir un cliente\n";
         bValido =false;
     }
 
-    if (frmCita.txtFechaCita=""){
-        sError += "Debe elegir una fecha";
+    if (frmCita.txtFechaCita.value==""){
+        sError += "Debe elegir una fecha\n";
+        bValido = false;
+    }
+
+    if (frmCita.txtDescripcionCita.value.trim()==""){
+        sError += "Debe indicar una descripcion";
         bValido = false;
     }
 
     if (!bValido)
         alert(sError);
+
 
     return bValido; 
 }
@@ -165,18 +183,62 @@ function buscarCliente(){
 
 }
 
-function agregarOperario(){
+function obtenerNumeroCita(){
+    $.get("php/obtenerNumeroCita.php",null,procesoRespuestaNumero,"text");
+}
 
+function procesoRespuestaNumero(sNumero){
+    frmCita.txtNumCita.value=sNumero;
+}
+
+function agregarOperario(){
+    var valor = frmCita.lstOperarioAgregarCita.value;
+    var desc = frmCita.lstOperarioAgregarCita.options[frmCita.lstOperarioAgregarCita.selectedIndex].text;
+    var option = "<option value='"+valor+"'>"+desc+"</option>";
+    if (sessionStorage['operarios'].indexOf(option)<0)
+        sessionStorage['operarios']+="<option value='"+valor+"'>"+desc+"</option>";
+    $("#lstOperarioCita").html(sessionStorage['operarios']);
 }
 
 function quitarOperarios(){
-
+    var opciones = frmCita.lstOperarioCita.selectedOptions;
+    for (var i=0;i<opciones.length;i++){
+        var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
+        alert (sTexto);
+        sessionStorage['operarios']=sessionStorage['operarios'].replace(sTexto,"");
+    }
+        $("#lstOperarioCita").html(sessionStorage['operarios']);
+    
 }
 
 function agregarMaterial(){
-
+  var valor = frmCita.lstMaterialAgregarCita.value;
+    var desc = frmCita.lstMaterialAgregarCita.options[frmCita.lstMaterialAgregarCita.selectedIndex].text;
+    var option = "<option value='"+valor+"'>"+desc+"</option>";
+    if (sessionStorage['materiales'].indexOf(option)<0)
+        sessionStorage['materiales']+="<option value='"+valor+"'>"+desc+"</option>";
+    $("#lstMaterialCita").html(sessionStorage['materiales']);
 }
+
+
 
 function quitarMateriales(){
 
+    var opciones = frmCita.lstMaterialCita.selectedOptions;
+    for (var i=0;i<opciones.length;i++){
+        var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
+        alert (sTexto);
+        sessionStorage['materiales']=sessionStorage['materiales'].replace(sTexto,"");
+    }
+        $("#lstMaterialCita").html(sessionStorage['materiales']);
+
+}
+
+function borrarDatos(){
+    frmCita.reset();
+    obtenerNumeroCita();
+    sessionStorage["materiales"]="";
+    sessionStorage["operarios"]="";
+    $("#lstMaterialCita").html(sessionStorage['materiales']);
+    $("#lstOperarioCita").html(sessionStorage['operarios']);
 }
