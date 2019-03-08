@@ -1,7 +1,7 @@
 $("#btnAceptarModificarMaterial").click(procesoModificarMaterial);
 $("#btnCancelarModificarMaterial").click(cancelar);
 
-var cargado =false;
+
 
 function procesoModificarMaterial(){
         $("#frmModificarMaterial").hide("normal");
@@ -11,12 +11,12 @@ function procesoModificarMaterial(){
         $(("#divGestion")).hide("normal");
     
         // Verifico si ya he cargado el formulario antes
-        if(!cargado){
-        //if ($('#frmModificarDatosMaterial').size() == 0) {
+
+       if ($('#frmModificarDatosMaterial').size() == 0) {
             $("<div>").appendTo('#formularios').load("formularios/modificarMaterial2.html", function(){
                 $.getScript("js/modificarMaterial2.js");
             });
-            cargado=true;
+           
         } else {    
             
             // Lo muestro si está oculto

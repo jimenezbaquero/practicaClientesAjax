@@ -22,7 +22,7 @@ $(function() {
      $("#listaOperario").click(cargaListadoOperarios);
      $("#listaCitas").click(cargaListadoCitas);
      $("#listaMateriales").click(cargaListadoMateriales);
-
+     $("#listadoIncidencias").click(cargaListadoIncidencias);
 
 
     });
@@ -657,3 +657,18 @@ function procesoRespuestaRellenarClientesListado(sDatos){
 }
 
     
+function cargaListadoIncidencias(){
+
+    ocultarFormularios();
+     $(("#divGestion")).hide("normal");
+    $.get("./php/getIncidencias.php", respuestaListadoIncidencias, 'html');
+
+}
+
+function respuestaListadoIncidencias(sDatos, sStatus, oXHR) {
+    
+$("#listados").empty();
+   
+    $("<div>").html(sDatos).appendTo("#listados");
+
+}
