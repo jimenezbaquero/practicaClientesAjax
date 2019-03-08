@@ -548,3 +548,24 @@ $("#listados").empty();
     $("<div>").html(sDatos).appendTo("#listados");
 
 }
+
+//Listado Cita de un cliente
+//rellenamos desplegable cliente
+rellenarDesplegableDNI();
+
+function rellenarDesplegableDNI() {
+    $.get("./php/getPedidos.php", null, respuestaComboDni, 'xml');
+}
+
+function respuestaComboDni(oXML) {
+    var oOptions = oXML.querySelectorAll("pedido");
+    var sOptions = "";
+
+    for (var i = 0; i < oOptions.length; i++) {
+        sOptions += '<option value="' + oOptions[i].querySelector("CLIENTE").textContent;
+        sOptions += '">' + oOptions[i].querySelector("CLIENTE").textContent;
+        sOptions += "</option>";
+    }
+
+    $("#lstDniCitaCli").html(sOptions);
+}
