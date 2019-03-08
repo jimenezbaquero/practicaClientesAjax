@@ -240,6 +240,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmBorrarCliente').show("normal");
         }
+        cargarComboClientesBorrar();
     }
 
     function cargaFormularioBorrarOperario()
@@ -259,6 +260,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmBorrarOperario').show("normal");
         }
+        cargarComboOperariosBorrar();
     }
 
     function cargaFormularioBorrarAdministrativo()
@@ -297,6 +299,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmBorrarMaterial').show("normal");
         }
+        cargarComboMaterialesBorrar();
     }
 
     function cargaFormularioBorrarCita()
@@ -507,6 +510,36 @@ function cargarComboCitasBorrar(){
 
 function procesoRespuestaRellenarCitasBor(sDatos){
     $("#lstCitasBor").html(sDatos);
+
+}
+
+function cargarComboClientesBorrar(){
+
+    $.get("php/rellenarClientes.php",null,procesoRespuestaRellenarClientesBor,"html");
+}
+
+function procesoRespuestaRellenarClientesBor(sDatos){
+    $("#lstClienteBor").html(sDatos);
+
+}
+
+function cargarComboMaterialesBorrar(){
+
+    $.get("php/rellenarMateriales.php",null,procesoRespuestaRellenarMaterialesBor,"html");
+}
+
+function procesoRespuestaRellenarMaterialesBor(sDatos){
+    $("#lstMaterialBor").html(sDatos);
+
+}
+
+function cargarComboOperariosBorrar(){
+
+    $.get("php/rellenarOperarios.php",null,procesoRespuestaRellenarOperariosBor,"html");
+}
+
+function procesoRespuestaRellenarOperariosBor(sDatos){
+    $("#lstOperarioBor").html(sDatos);
 
 }
 

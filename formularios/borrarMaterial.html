@@ -2,11 +2,12 @@
 <div class="row col-12 divFrm" id="divFrmBorrarMaterial">
     <form class="col-12" method="post" id="frmBorrarMaterial">
       <h1>Baja Material</h1>
-      <div id="camposBorrarMaterial">
+	  <div id="camposBorrarMaterial">
         <div class="form-group row align-items-center">
-          <label class="control-label col-md-2 " for="txtBorrarMaterial">CÓDIGO:</label>
+          <label class="control-label col-md-2 " for="txtBorrarMaterial">Material:</label>
           <div class="col-md-10">
-            <input class="form-control" id="txtBorrarMaterial" name="txtBorrarMaterial" placeholder="ABC123" type="text">
+              <select class="form-control col-md-6" id="lstMaterialBor" name="lstMaterialBor" size="1">
+              </select> 
           </div>
         </div>
       </div>
@@ -14,7 +15,6 @@
       <div class="row d-flex justify-content-end">
         <div class="form-group mr-3">
           <input type="button" id="btnAceptarBorrarMaterial" name="btnAceptaBorrarMaterial" class="btn btn-primary " value="Aceptar"/>
-          <input type="button" id="btnBorrarBorrarMaterial" name="btnBorrarBorrarMaterial" class="btn btn-secundary mr-2 ml-2" value="Borrar"/>
           <input type="button" id="btnCancelarBorrarMaterial" name="btnCancelarBorrarMaterial" class="btn btn-danger" value="Cancelar"/>
         </div>
       </div>
