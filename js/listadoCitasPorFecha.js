@@ -81,7 +81,7 @@ function procesoRespuestaListadoFechas (oXML){
         sTabla += sMaterial+"</td></tr>";
     }
 
-    $("#formularios").html(sTabla);
+    $("#listados").html(sTabla);
 
     $("#tablaFechas").DataTable();
     

@@ -44,8 +44,8 @@ function procesoRespuestaListadoFechas (oXML){
       }
         sTabla += sMaterial+"</td></tr>";
     }
-
-    $("#formularios").html(sTitulo+sTabla);
+	ocultarFormularios();
+    $("#listados").html(sTitulo+sTabla);
 
     $("#tablaFechas").DataTable();
     
