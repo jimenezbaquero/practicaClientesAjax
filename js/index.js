@@ -72,6 +72,9 @@ $(function() {
         for (var i=0;i<array.length;i++)
             array[i].reset();
     }
+    function ocultarFormularios(){
+    $("#formularios").html("");
+}
 
     function ocultarListados(){
      borrarListado();
@@ -576,6 +579,7 @@ function procesoRespuestaRellenarOperariosBor(sDatos){
 //Listados
 //Listado Cliente
 function cargaListadoClientes(){
+    ocultarFormularios();
      $(("#divGestion")).hide("normal");
     $.get("./php/getClientes.php", respuestaListadoClientes, 'html');
 
@@ -591,6 +595,7 @@ $("#listados").empty();
 
 //Listado Operario
 function cargaListadoOperarios(){
+    ocultarFormularios();
      $(("#divGestion")).hide("normal");
     $.get("./php/getOperarios.php", respuestaListadoOperarios, 'html');
 
@@ -607,6 +612,7 @@ $("#listados").empty();
 
 //Listado Citas
 function cargaListadoCitas(){
+    ocultarFormularios();
      $(("#divGestion")).hide("normal");
     $.get("./php/getCitas.php", respuestaListadoCitas, 'html');
 
@@ -621,6 +627,7 @@ $("#listados").empty();
 }
 //Listado Material
 function cargaListadoMateriales(){
+    ocultarFormularios();
      $(("#divGestion")).hide("normal");
     $.get("./php/getMateriales.php", respuestaListadoMateriales, 'html');
 
@@ -636,10 +643,17 @@ $("#listados").empty();
 
 //rellenamos desplegable cliente
 
-function rellenarDesplegableDNI(){
+
+
+
+function rellenarDesplegableDNI() {
+    ocultarFormularios();
+    $.get("./php/getDniCliente.php", null, respuestaComboDni, 'xml');
+}
+
 
     $.get("php/rellenarClientes.php",null,procesoRespuestaRellenarClientesListado,"html");
-}
+
 
 function procesoRespuestaRellenarClientesListado(sDatos){
     $("#lstDniCitaCli").html(sDatos);
