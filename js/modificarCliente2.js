@@ -30,12 +30,12 @@ function procesoRespuestaClienteModificar(oDatos){
         alert(oDatos.mensaje);
     } else {
         alert(oDatos.mensaje);
-        $("#frmModificarDatosCliente2").hide("normal");
+        $("#frmModificarDatosCliente").hide("normal");
         $("#divGestion").show("normal");
     }
 }
 
 function cancelar(){
     $("#divGestion").show("normal");
-    frmModificarDatosCliente2.style.display="none";
+    frmModificarDatosCliente.style.display="none";
 }
