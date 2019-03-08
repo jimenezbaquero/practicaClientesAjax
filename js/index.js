@@ -31,6 +31,7 @@ $(function() {
 
     function cancelar()
     {
+        ocultarListados();
         ocultarCapas();
         mostrarJumbotron();
     }
@@ -72,6 +73,15 @@ $(function() {
             array[i].reset();
     }
 
+    function ocultarListados(){
+     borrarListado();
+        $("#listados").show("hide");
+    }
+
+    function borrarListado(){
+    $("#listados").html("");
+    }
+
     function limpiarErrores() 
     {
         var array = document.getElementsByClassName("error");
@@ -85,6 +95,7 @@ $(function() {
 
     function cargaFormularioCliente()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAltaCliente')").hide("normal");
         //Oculto la imagen
@@ -107,6 +118,7 @@ $(function() {
 
     function cargaFormularioOperario()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAltaOperario')").hide("normal");
         //Oculto la imagen
@@ -126,6 +138,7 @@ $(function() {
 
     function cargaFormularioAdministrativo()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAltaAdministrativo')").hide("normal");
         //Oculto la imagen
@@ -145,6 +158,7 @@ $(function() {
 
     function cargaFormularioMaterial()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAltaMaterial')").hide("normal");
         //Oculto la imagen
@@ -164,6 +178,7 @@ $(function() {
 
     function cargaFormularioModificarCliente()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmModificarCliente')").hide("normal");
         //Oculto la imagen
@@ -184,6 +199,7 @@ $(function() {
 
     function cargaFormularioModificarMaterial()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmModificarMaterial')").hide("normal");
         //Oculto la imagen
@@ -204,6 +220,7 @@ $(function() {
 
     function cargaFormularioModificarCita()
     {
+        ocultarListados();
 
         // Oculto todos los formularios menos este
         $("form:not('#frmModificarCita')").hide("normal");
@@ -225,6 +242,7 @@ $(function() {
 
     function cargaFormularioBorrarCliente()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmBorrarCliente')").hide("normal");
         //Oculto la imagen
@@ -245,6 +263,7 @@ $(function() {
 
     function cargaFormularioBorrarOperario()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmBorrarOperario')").hide("normal");
         //Oculto la imagen
@@ -265,6 +284,7 @@ $(function() {
 
     function cargaFormularioBorrarAdministrativo()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmBorrarAdministrativo')").hide("normal");
         //Oculto la imagen
@@ -284,6 +304,7 @@ $(function() {
 
     function cargaFormularioBorrarMaterial()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmBorrarMaterial')").hide("normal");
         //Oculto la imagen
@@ -304,6 +325,7 @@ $(function() {
 
     function cargaFormularioBorrarCita()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmBorrarCita')").hide("normal");
         //Oculto la imagen
@@ -324,6 +346,7 @@ $(function() {
 
     function cargaFormularioCita()
     {
+        ocultarListados();
 
         // Oculto todos los formularios menos este
         $("form:not('#frmCita')").hide("normal");
@@ -346,6 +369,7 @@ $(function() {
 
     function cargaFormularioAsignarOperario()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAsignarOperario')").hide("normal");
         //Oculto la imagen
@@ -365,6 +389,7 @@ $(function() {
 
     function cargaFormularioAsignarAdministrativo()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAsignarAdministrativo')").hide("normal");
         //Oculto la imagen
@@ -384,6 +409,7 @@ $(function() {
 
     function cargaFormularioAsignarMaterial()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAsignarMaterial')").hide("normal");
         //Oculto la imagen
@@ -403,6 +429,7 @@ $(function() {
 
     function cargaFormularioAsignarIncidencia()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmAltaIncidencia')").hide("normal");
         //Oculto la imagen
@@ -422,6 +449,7 @@ $(function() {
 
     function cargaFormularioListadoCitas()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmFechasCitas')").hide("normal");
         //Oculto la imagen
@@ -441,6 +469,7 @@ $(function() {
 
     function cargaFormularioCitasCliente()
     {
+        ocultarListados();
         // Oculto todos los formularios menos este
         $("form:not('#frmCitasCliente')").hide("normal");
         //Oculto la imagen
