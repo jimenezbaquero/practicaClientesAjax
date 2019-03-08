@@ -22,6 +22,7 @@ $conexion->begin_transaction();
 
 
 $sql = "UPDATE materiales SET NOMBRE='".$datos->NOMBRE."',PRECIO=".$datos->PRECIO.",DESCRIPCION='".$datos->DESCRIPCION."' WHERE CODIGO='".$datos->CODIGO."'";
+
 $resultado = mysqli_query($conexion,$sql);
 
 if (!$resultado)

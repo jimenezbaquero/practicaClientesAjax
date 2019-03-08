@@ -1,8 +1,10 @@
 $("#btnAceptarModificarDatosMaterial").click(procesoModificarMaterial);
-
+$("#btnCancelarModificarDatosMaterial").click(cancelar);
 
 
 function procesoModificarMaterial(){
+
+    validarMaterialMod();
 
         var datos={
             CODIGO:frmModificarDatosMaterial.txtCodModificarDatosMaterial.value,
@@ -28,7 +30,13 @@ function procesoRespuestaMaterialModificar(oDatos){
         alert(oDatos.mensaje);
     } else {
         alert(oDatos.mensaje);
+        localStorage.removeItem('materiales');
         $("#frmModificarDatosMaterial").hide("normal");
         $("#divGestion").show("normal");
     }
+}
+
+function cancelar(){
+    $("#divGestion").show("normal");
+    frmModificarDatosMaterial.style.display="none";
 }

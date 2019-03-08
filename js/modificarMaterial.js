@@ -1,4 +1,7 @@
 $("#btnAceptarModificarMaterial").click(procesoModificarMaterial);
+$("#btnCancelarModificarMaterial").click(cancelar);
+
+var cargado =false;
 
 function procesoModificarMaterial(){
         $("#frmModificarMaterial").hide("normal");
@@ -8,11 +11,12 @@ function procesoModificarMaterial(){
         $(("#divGestion")).hide("normal");
     
         // Verifico si ya he cargado el formulario antes
-        if ($('#frmModificarDatosMaterial').size() == 0) {
+        if(!cargado){
+        //if ($('#frmModificarDatosMaterial').size() == 0) {
             $("<div>").appendTo('#formularios').load("formularios/modificarMaterial2.html", function(){
                 $.getScript("js/modificarMaterial2.js");
             });
-            
+            cargado=true;
         } else {    
             
             // Lo muestro si está oculto
@@ -22,8 +26,9 @@ function procesoModificarMaterial(){
 
         $.ajax({
             url: "php/modificarMaterial.php",
-            type: "POST",
+            type: "GET",
             async: false,
+            cache: false,
             data:  "material="+frmModificarMaterial.lstMaterialesMod.value,
             dataType: "json",
             success: procesoRespuestaMaterialMod
@@ -39,17 +44,7 @@ function procesoRespuestaMaterialMod(oDatos){
         $("#txtDescripcionModificarDatosMaterial").val(oDatos.DESCRIPCION);
 }
 
-function instanciarXHR()
-{
-    var xhttp = null;
-
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    } 
-    else // code for IE5 and IE6
-    {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    return xhttp;
+function cancelar(){
+    $("#divGestion").show("normal");
+    frmModificarMaterial.style.display="none";
 }
