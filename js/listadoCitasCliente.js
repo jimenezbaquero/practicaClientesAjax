@@ -1,6 +1,5 @@
 
 $("#btnAceptarCitasCliente").click(listarCitasPorClientes);
-
 function listarCitasPorClientes(){
 
 	$.get("php/listadoCitasCliente.php","cliente="+frmCitasCliente.lstDniCitaCli.value,procesoRespuestaListadoFechas,"xml");

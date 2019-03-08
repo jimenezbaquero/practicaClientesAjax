@@ -647,14 +647,11 @@ $("#listados").empty();
 
 
 function rellenarDesplegableDNI() {
-    ocultarFormularios();
-    $.get("./php/getDniCliente.php", null, respuestaComboDni, 'xml');
-}
 
-
+    
     $.get("php/rellenarClientes.php",null,procesoRespuestaRellenarClientesListado,"html");
 
-
+}
 function procesoRespuestaRellenarClientesListado(sDatos){
     $("#lstDniCitaCli").html(sDatos);
 }
