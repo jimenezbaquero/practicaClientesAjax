@@ -30,7 +30,7 @@ $resultado = mysqli_query($conexion,$sql);
 if (!$resultado)
 	$todoBien=false;
 
-echo $sql;
+
 
 $sql = "DELETE FROM materiales_citas WHERE COD_CITA=".$datos->numero;
 $resultado = mysqli_query($conexion,$sql);

@@ -48,7 +48,7 @@ function procesoRespuestaCitaMod(oDatos){
         cargarComboMaterialesMod();
     
         $("#txtNumCitaMod").val(oDatos.numero);
-        $("#txtFechaCitaMod").val(oDatos.fecha);
+        $("#txtFechaCitaMod").datepicker(oDatos.fecha);
         $("#txtClienteCitaMod").val(oDatos.cliente);
         $("#txtDescripcionCitaMod").val(oDatos.descripcion);
         $("#lstOperarioCitaMod").html(oDatos.operarios);
