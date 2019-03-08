@@ -82,7 +82,7 @@ function procesoRespuestaListadoFechas (oXML){
       }
         sTabla += sMaterial+"</td></tr>";
     }
-
+ocultarFormularios();
     $("#listados").html(sTabla);
 
     $("#tablaFechas").DataTable();
