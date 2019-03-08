@@ -21,7 +21,7 @@ mysqli_set_charset($conexion,"utf8");
 $conexion->begin_transaction();
 
 
-$sql = "UPDATE clientes SET NOMBRE='".$datos->NOMBRE."',DIRECCION='".$datos->DIRECCION."',TELEFONO='".$datos->TELEFONO."' WHERE DNI=".$datos->DNI;
+$sql = "UPDATE clientes SET NOMBRE='".$datos->NOMBRE."',DIRECCION='".$datos->DIRECCION."',TELEFONO=".$datos->TELEFONO." WHERE DNI='".$datos->DNI."'";
 $resultado = mysqli_query($conexion,$sql);
 
 if (!$resultado)
