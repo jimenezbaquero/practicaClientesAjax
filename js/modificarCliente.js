@@ -19,6 +19,7 @@ function procesoModificarCliente(){
             $('#frmModificarCliente2').show("normal");
         }
 
+
         $.ajax({
             url: "php/modificarCliente.php",
             type: "POST",
