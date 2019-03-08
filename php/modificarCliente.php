@@ -12,11 +12,11 @@ mysqli_set_charset($conexion,"utf8");
 
 
 
-$sql = "SELECT * FROM clientes where DNI='".$_GET['cliente']."'";
+$sql = "SELECT * FROM clientes where DNI='".$_POST['cliente']."'";
 
 $resultado = mysqli_query($conexion,$sql);
 $fila =mysqli_fetch_array($resultado);
-$respuesta['DNI']=$_GET['cliente'];
+$respuesta['DNI']=$_POST['cliente'];
 $respuesta['NOMBRE']=$fila['NOMBRE'];
 $respuesta['DIRECCION']=$fila['DIRECCION'];
 $respuesta['TELEFONO']=$fila['TELEFONO'];

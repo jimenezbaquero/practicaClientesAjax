@@ -18,7 +18,6 @@ function procesoRespuestaOperarioBor(oDatos){
         } else {
             alert(oDatos.mensaje);
             cancelarBorrarOperario();
-            localStorage.removeItem('operarios');
             $('#frmBorrarOperario').hide("normal");
             $("#divGestion").show("normal");
         }

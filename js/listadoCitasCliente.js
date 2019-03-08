@@ -1,7 +1,5 @@
 
 $("#btnAceptarCitasCliente").click(listarCitasPorClientes);
-$("#btnCancelarCitasCliente").click(cancelar);
-
 function listarCitasPorClientes(){
 
 	$.get("php/listadoCitasCliente.php","cliente="+frmCitasCliente.lstDniCitaCli.value,procesoRespuestaListadoFechas,"xml");
@@ -52,8 +50,3 @@ function procesoRespuestaListadoFechas (oXML){
     $("#tablaFechas").DataTable();
     
 } 
-
-function cancelar(){
-    $("#divGestion").show("normal");
-    frmCitasCliente.style.display="none";
-}

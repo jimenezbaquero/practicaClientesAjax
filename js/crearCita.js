@@ -8,7 +8,6 @@ $("#btnAgregarOperario").click(agregarOperario);
 $("#btnQuitarOperario").click(quitarOperarios);
 $("#btnAgregarMaterial").click(agregarMaterial);
 $("#btnQuitarMaterial").click(quitarMateriales);
-$("#btnCancelarCita").click(cancelar);
 
 
 cargarComboOperarios();
@@ -251,7 +250,7 @@ function quitarOperarios(){
     var opciones = frmCita.lstOperarioCita.selectedOptions;
     for (var i=0;i<opciones.length;i++){
         var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
-
+        alert (sTexto);
         sessionStorage['operarios']=sessionStorage['operarios'].replace(sTexto,"");
     }
         $("#lstOperarioCita").html(sessionStorage['operarios']);
@@ -274,7 +273,7 @@ function quitarMateriales(){
     var opciones = frmCita.lstMaterialCita.selectedOptions;
     for (var i=0;i<opciones.length;i++){
         var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
-
+        alert (sTexto);
         sessionStorage['materiales']=sessionStorage['materiales'].replace(sTexto,"");
     }
         $("#lstMaterialCita").html(sessionStorage['materiales']);
@@ -288,10 +287,4 @@ function borrarDatos(){
     sessionStorage['operarios']="";
     $("#lstMaterialCita").html("");
     $("#lstOperarioCita").html("");
-}
-
-function cancelar(){
-    borrarDatos();
-    $('#frmCita').hide("normal");
-    $("#divGestion").show("normal");   
 }

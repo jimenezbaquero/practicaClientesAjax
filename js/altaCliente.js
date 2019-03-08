@@ -35,6 +35,5 @@ function borrarDatos(){
 
 function cancelar(){
     borrarDatos();
-    $("#divGestion").show("normal");
     frmAltaCliente.style.display="none";
 }

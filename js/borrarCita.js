@@ -11,10 +11,17 @@ $("#btnCancelarBorrarCita").click(cancelarBorrarCita);
 function procesoBorrarCita(){
 
 
-    $.post("php/borrarCita.php","cita="+frmBorrarCita.lstCitasBor.value,procesoRespuestaCitaBor, "json");
+        $.ajax({
+            url: "php/borrarCita.php",
+            type: "POST",
+            async: false,
+            data:  "cita="+frmBorrarCita.lstCitasBor.value,
+            dataType: "json",
+            success: procesoRespuestaCitaBor
+        });
 
-    
-}
+    }
+
 
 function procesoRespuestaCitaBor(oDatos){
     

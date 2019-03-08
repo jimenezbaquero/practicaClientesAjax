@@ -1,7 +1,5 @@
 
 $("#btnAceptarCitas").click(listarCitasPorFechas);
-$("#btnCancelarCitas").click(cancelar);
-
 
  $.datepicker.regional['es'] = {
  closeText: 'Cerrar',
@@ -88,9 +86,3 @@ function procesoRespuestaListadoFechas (oXML){
     $("#tablaFechas").DataTable();
     
 } 
-
-function cancelar(){
-
-    $("#divGestion").show("normal");
-    frmFechasCitas.style.display="none";
-}

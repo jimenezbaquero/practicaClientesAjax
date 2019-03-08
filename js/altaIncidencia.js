@@ -1,8 +1,5 @@
 
 $("#btnAceptarInc").click(procesoAltaIncidencia);
-$("#btnBorrarInc").click(borrar);
-$("#btnCancelarInc").click(cancelar);
-
 
 rellenarCitas();
 var numeroIncidencia = 0;
@@ -64,16 +61,4 @@ function procesoRespuestaRellenarCitas(sDatos){
 function obtenerIncidencia(iCita){
 	$.get("php/obtenerIncidencia.php?cita="+iCita,function(sDato){numeroIncidencia=sDato},"text");
 
-}
-
-function borrar(){
-    frmAltaIncidencia.txtDescInc.value="";
-    frmAltaIncidencia.lstCitas.selectedIndex=0;
-
-}
-
-function cancelar(){
-    borrar();
-    $('#frmAltaIncidencia').hide("normal");
-    $("#divGestion").show("normal");   
 }

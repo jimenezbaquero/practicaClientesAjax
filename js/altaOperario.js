@@ -23,7 +23,7 @@ function altaOperario()
             alert(oDatos.mensaje);
             borrarDatos();
             if(localStorage['operarios']!=undefined){
-                localStorage.removeItem('operarios');
+                localStorage['operarios']="";
                 cargarComboOperarios();
             }      
             cancelar();
@@ -38,6 +38,5 @@ function borrarDatos(){
 
 function cancelar(){
     borrarDatos();
-    $("#divGestion").show("normal");
     frmAltaOperario.style.display="none";
 }

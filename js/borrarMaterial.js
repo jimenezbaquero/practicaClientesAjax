@@ -18,7 +18,6 @@ function procesoRespuestaMaterialBor(oDatos){
         } else {
             alert(oDatos.mensaje);
             cancelarBorrarMaterial();
-            localStorage.removeItem('materiales');
             $('#frmBorrarMaterial').hide("normal");
             $("#divGestion").show("normal");
         }
