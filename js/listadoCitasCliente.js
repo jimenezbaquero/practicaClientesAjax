@@ -14,9 +14,13 @@ function listarCitasPorClientes(){
 function procesoRespuestaListadoFechas (oXML){
 
 	    var arrayCitas = oXML.querySelectorAll("CITA");
-	    var sTitulo ="<center><h1>Listado de las citas del cliente: "+arrayCitas[0].querySelector("CLIENTE").textContent+"</h1></center>";
-    	var sTabla = "<table id='tablaFechas' class='table'><thead><tr><th>NUMERO</th><th>FECHA</th><th>DESCRIPCION</th>";
-    	sTabla += "<th>OPERARIOS</th><th>MATERIALES</th></tr></thead>";
+	    var sTitulo ="<center><h1>Listado de las citas del cliente: "+frmCitasCliente.lstDniCitaCli.options[frmCitasCliente.lstDniCitaCli.selectedIndex].innerHTML+"</h1></center>";
+        var sTabla ="";
+
+       
+    	
+        sTabla += "<table id='tablaFechas' class='table'><thead><tr><th>NUMERO</th><th>FECHA</th><th>DESCRIPCION</th>";
+    	sTabla += "<th>OPERARIOS</th><th>MATERIALES</th></tr></thead><tbody>";
 
 
 
@@ -46,7 +50,10 @@ function procesoRespuestaListadoFechas (oXML){
       }
         sTabla += sMaterial+"</td></tr>";
     }
+    sTabla += "</tbody></table>";
+
 	ocultarFormularios();
+
     $("#listados").html(sTitulo+sTabla);
 
     $("#tablaFechas").DataTable();
