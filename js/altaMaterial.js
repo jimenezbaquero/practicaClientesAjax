@@ -4,7 +4,7 @@ $("#btnCancelarMaterial").click(cancelar);
 
 function altaMaterial()
 {
-    //validarMaterial();
+    validarAltaMaterial();
 
     var oCliente = {
         Codigo: frmAltaMaterial.txtCodMat.value,
