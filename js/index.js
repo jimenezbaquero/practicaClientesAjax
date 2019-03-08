@@ -571,16 +571,14 @@ $("#listados").empty();
 
 }
 
-//Listado Cita de un cliente
 //rellenamos desplegable cliente
-rellenarDesplegableDNI();
 
 function rellenarDesplegableDNI() {
-    //$.get("./php/getPedidos.php", null, respuestaComboDni, 'xml');
+    $.get("./php/getDniCliente.php", null, respuestaComboDni, 'xml');
 }
 
 function respuestaComboDni(oXML) {
-    var oOptions = oXML.querySelectorAll("pedido");
+    var oOptions = oXML.querySelectorAll("citas");
     var sOptions = "";
 
     for (var i = 0; i < oOptions.length; i++) {
