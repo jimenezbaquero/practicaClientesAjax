@@ -1,4 +1,6 @@
 $("#btnAceptarCliente").click(altaCliente);
+$("#btnBorrarCliente").click(borrarDatos);
+$("#btnCancelarCliente").click(cancelar);
 
 function altaCliente()
 {
@@ -21,9 +23,17 @@ function altaCliente()
             alert(oDatos.mensaje);
         } else {
             alert(oDatos.mensaje);
-            frmAltaCliente.reset();
-            frmAltaCliente.style.display="none";
+            cancelar();
             $("#divGestion").show("normal");
         }
     }
+}
+
+function borrarDatos(){
+    frmAltaCliente.reset();
+}
+
+function cancelar(){
+    borrarDatos();
+    frmAltaCliente.style.display="none";
 }

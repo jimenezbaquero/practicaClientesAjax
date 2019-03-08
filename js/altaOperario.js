@@ -1,4 +1,6 @@
 $("#btnAceptarOperario").click(altaOperario);
+$("#btnBorrarOperario").click(borrarDatos);
+$("#btnCancelarOperario").click(cancelar);
 
 function altaOperario()
 {
@@ -19,13 +21,22 @@ function altaOperario()
             alert(oDatos.mensaje);
         } else {
             alert(oDatos.mensaje);
-            frmAltaOperario.reset();
+            borrarDatos();
             if(localStorage['operarios']!=undefined){
                 localStorage['operarios']="";
                 cargarComboOperarios();
             }      
-            frmAltaOperario.style.display="none";
+            cancelar();
             $("#divGestion").show("normal");
         }
     }
+}
+
+function borrarDatos(){
+    frmAltaOperario.reset();
+}
+
+function cancelar(){
+    borrarDatos();
+    frmAltaOperario.style.display="none";
 }
