@@ -32,7 +32,8 @@ function procesoModificarCita(){
         $.ajax({
             url: "php/modificarCita.php",
             type: "GET",
-            async: true,
+            async: false,
+            cache: false,
             data:  "cita="+frmModificarCita.lstCitasMod.value,
             dataType: "json",
             success: procesoRespuestaCitaMod

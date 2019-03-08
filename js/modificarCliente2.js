@@ -1,12 +1,10 @@
-//# sourceURL=altaProducto.js; if (sessionStorage["materiales"] != undefined) {
-
 $("#btnAceptarModificarDatosCliente").click(procesoModificarCliente);
-//$("#btnCancelarModificarDatosCliente").click(cancelar);
+$("#btnCancelarModificarDatosCliente").click(cancelar);
 
 
 function procesoModificarCliente(){
 
-        validarClienteMod();
+        //validarClienteMod();
 
         var datos={
             DNI:frmModificarDatosCliente.txtDniModificarDatosCliente.value,
@@ -32,12 +30,12 @@ function procesoRespuestaClienteModificar(oDatos){
         alert(oDatos.mensaje);
     } else {
         alert(oDatos.mensaje);
-        $("#frmModificarDatosCliente").hide("normal");
+        $("#frmModificarDatosCliente2").hide("normal");
         $("#divGestion").show("normal");
     }
 }
 
 function cancelar(){
     $("#divGestion").show("normal");
-    frmModificarDatosCliente.style.display="none";
+    frmModificarDatosCliente2.style.display="none";
 }
