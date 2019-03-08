@@ -12,11 +12,11 @@ mysqli_set_charset($conexion,"utf8");
 
 
 
-$sql = "SELECT * FROM materiales where CODIGO='".$_POST['material']."'";
+$sql = "SELECT * FROM materiales where CODIGO='".$_GET['material']."'";
 
 $resultado = mysqli_query($conexion,$sql);
 $fila =mysqli_fetch_array($resultado);
-$respuesta['CODIGO']=$_POST['material'];
+$respuesta['CODIGO']=$_GET['material'];
 $respuesta['NOMBRE']=$fila['NOMBRE'];
 $respuesta['PRECIO']=$fila['PRECIO'];
 $respuesta['DESCRIPCION']=$fila['DESCRIPCION'];

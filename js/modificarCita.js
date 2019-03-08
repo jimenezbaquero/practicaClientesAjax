@@ -2,7 +2,7 @@
 
 
 $("#btnAceptarModificarCita").click(procesoModificarCita);
-$("#btnBorrarCita").click(borrarDatos);
+$("#btnCancelarModificarCita").click(cancelar);
 
 cargarComboOperariosMod();
 cargarComboMaterialesMod();
@@ -33,6 +33,7 @@ function procesoModificarCita(){
             url: "php/modificarCita.php",
             type: "GET",
             async: false,
+            cache: false,
             data:  "cita="+frmModificarCita.lstCitasMod.value,
             dataType: "json",
             success: procesoRespuestaCitaMod
@@ -48,7 +49,7 @@ function procesoRespuestaCitaMod(oDatos){
         cargarComboMaterialesMod();
     
         $("#txtNumCitaMod").val(oDatos.numero);
-        $("#txtFechaCitaMod").datepicker(oDatos.fecha);
+        $("#txtFechaCitaMod").val(oDatos.fecha);
         $("#txtClienteCitaMod").val(oDatos.cliente);
         $("#txtDescripcionCitaMod").val(oDatos.descripcion);
         $("#lstOperarioCitaMod").html(oDatos.operarios);
@@ -136,7 +137,9 @@ function instanciarXHR()
 
 
 
-function borrarDatos(){
-    frmModificarCita.lstCitasMod.value=0;
 
+
+function cancelar(){
+    $("#divGestion").show("normal");
+    frmModificarCita.style.display="none";
 }
