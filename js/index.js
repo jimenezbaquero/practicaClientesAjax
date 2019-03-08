@@ -179,6 +179,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmModificarCliente').show("normal");
         }
+        cargarComboClientesModificar();
     }
 
     function cargaFormularioModificarMaterial()
@@ -478,6 +479,16 @@ function procesoRespuestaRellenarCitasMod(sDatos){
 
 }
 
+function cargarComboClientesModificar(){
+
+    $.get("php/rellenarClientes.php",null,procesoRespuestaRellenarClientesMod,"html");
+}
+
+function procesoRespuestaRellenarClientesMod(sDatos){
+    $("#lstClientesMod").html(sDatos);
+
+}
+
 function cargarComboCitasBorrar(){
 
     $.get("php/rellenarCitas.php",null,procesoRespuestaRellenarCitasBor,"html");
@@ -554,7 +565,7 @@ $("#listados").empty();
 rellenarDesplegableDNI();
 
 function rellenarDesplegableDNI() {
-    $.get("./php/getPedidos.php", null, respuestaComboDni, 'xml');
+    //$.get("./php/getPedidos.php", null, respuestaComboDni, 'xml');
 }
 
 function respuestaComboDni(oXML) {

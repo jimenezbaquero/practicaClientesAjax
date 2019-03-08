@@ -32,10 +32,10 @@ function procesoModificarCliente(){
 
 
 function procesoRespuestaClienteMod(oDatos){
-        $("#txtDniModificarDatosCliente").val(oDatos.dni);
-        $("#txtNombreModificarDatosCliente").val(oDatos.nombre);
-        $("#txtDireccionModificarDatosCliente").val(oDatos.direccion);
-        $("#txtTfnoModificarDatosCliente").val(oDatos.telefono);
+        $("#txtDniModificarDatosCliente").val(oDatos.DNI);
+        $("#txtNombreModificarDatosCliente").val(oDatos.NOMBRE);
+        $("#txtDireccionModificarDatosCliente").val(oDatos.DIRECCION);
+        $("#txtTfnoModificarDatosCliente").val(oDatos.TELEFONO);
 }
 
 function instanciarXHR()
