@@ -10,7 +10,7 @@ function altaOperario()
         DNI: document.getElementById("txtDniOp").value.trim(),
         Nombre: document.getElementById("txtNombreOp").value.trim()
     };
-    //  IMPORTANTE: EL NOMBRE DE LOS PARAMETROS ENVIADOS DIFIERE EN EL CASO DEL OBJETO LITERAL
+    
     var sParametros = "datos=" + JSON.stringify(oCliente);
 
     $.post("php/altaOperario.php", sParametros, respuestaAltaOperario, 'json');
