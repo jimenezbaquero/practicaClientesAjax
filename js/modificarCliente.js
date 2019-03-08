@@ -1,4 +1,5 @@
 $("#btnAceptarModificarCliente").click(procesoModificarCliente);
+$("#btnCancelarModificarCliente").click(cancelar);
 
 function procesoModificarCliente(){
         $("#frmModificarCliente").hide("normal");
@@ -23,7 +24,7 @@ function procesoModificarCliente(){
         $.ajax({
             url: "php/modificarCliente.php",
             type: "POST",
-            async: false,
+            async: true,
             data:  "cliente="+frmModificarCliente.lstClientesMod.value,
             dataType: "json",
             success: procesoRespuestaClienteMod
@@ -52,4 +53,9 @@ function instanciarXHR()
     }
 
     return xhttp;
+}
+
+function cancelar(){
+    $("#divGestion").show("normal");
+    frmModificarCliente.style.display="none";
 }

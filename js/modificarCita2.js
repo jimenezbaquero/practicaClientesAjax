@@ -1,5 +1,7 @@
 //# sourceURL=altaProducto.js; if (sessionStorage["materiales"] != undefined) {
 
+
+
 $("#btnAceptarCitaMod").click(procesoModificarCita);
 $("#btnBorrarModificarCita").click(borrarDatos);
 $("#lupaMod").click(buscarCliente);
@@ -7,6 +9,7 @@ $("#btnAgregarOperarioMod").click(agregarOperarioMod);
 $("#btnQuitarOperarioMod").click(quitarOperariosMod);
 $("#btnAgregarMaterialMod").click(agregarMaterialMod);
 $("#btnQuitarMaterialMod").click(quitarMaterialesMod);
+$("#btnCancelarCitaMod").click(cancelar);
 
 
  $.datepicker.regional['es'] = {
@@ -165,7 +168,6 @@ function quitarOperariosMod(){
     var opciones = frmModificarCita2.lstOperarioCitaMod.selectedOptions;
     for (var i=0;i<opciones.length;i++){
         var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
-        alert (sTexto);
         sessionStorage['operariosMod']=sessionStorage['operariosMod'].replace(sTexto,"");
     }
         $("#lstOperarioCitaMod").html(sessionStorage['operariosMod']);
@@ -188,11 +190,14 @@ function quitarMaterialesMod(){
     var opciones = frmModificarCita2.lstMaterialCitaMod.selectedOptions;
     for (var i=0;i<opciones.length;i++){
         var sTexto = "<option value='"+opciones[i].value+"'>"+opciones[i].text+"</option>";
-        alert (sTexto);
         sessionStorage['materialesMod']=sessionStorage['materialesMod'].replace(sTexto,"");
     }
         $("#lstMaterialCitaMod").html(sessionStorage['materialesMod']);
 
 }
 
+function cancelar(){
 
+    $("#divGestion").show("normal");
+    frmModificarCita2.style.display="none";
+}

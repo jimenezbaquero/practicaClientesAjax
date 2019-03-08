@@ -1,4 +1,5 @@
 $("#btnAceptarModificarMaterial").click(procesoModificarMaterial);
+$("#btnCancelarModificarMaterial").click(cancelar);
 
 function procesoModificarMaterial(){
         $("#frmModificarMaterial").hide("normal");
@@ -23,7 +24,7 @@ function procesoModificarMaterial(){
         $.ajax({
             url: "php/modificarMaterial.php",
             type: "POST",
-            async: false,
+            async: true,
             data:  "material="+frmModificarMaterial.lstMaterialesMod.value,
             dataType: "json",
             success: procesoRespuestaMaterialMod
@@ -52,4 +53,9 @@ function instanciarXHR()
     }
 
     return xhttp;
+}
+
+function cancelar(){
+    $("#divGestion").show("normal");
+    frmModificarMaterial.style.display="none";
 }

@@ -12,7 +12,7 @@ function altaMaterial()
         Precio: frmAltaMaterial.txtPrecioMat.value,
         Descripcion: frmAltaMaterial.txtDescripcionMat.value
     };
-    //  IMPORTANTE: EL NOMBRE DE LOS PARAMETROS ENVIADOS DIFIERE EN EL CASO DEL OBJETO LITERAL
+   
     var sParametros = "datos=" + JSON.stringify(oCliente);
 
     $.post("php/altaMaterial.php", sParametros, respuestaAltaMaterial, 'json');
@@ -22,6 +22,7 @@ function altaMaterial()
         if (oDatos.error) {
             alert(oDatos.mensaje);
         } else {
+            localStorage.removeItem('materiales');
             alert(oDatos.mensaje);
             cancelar();
             $("#divGestion").show("normal");
@@ -35,5 +36,7 @@ function borrarDatos(){
 
 function cancelar(){
     borrarDatos();
+    
+    $("#divGestion").show("normal");
     frmAltaMaterial.style.display="none";
 }
