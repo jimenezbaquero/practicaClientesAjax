@@ -314,6 +314,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmBorrarCita').show("normal");
         }
+        cargarComboCitasBorrar();
     }
 
     function cargaFormularioCita()
@@ -474,6 +475,16 @@ function cargarComboCitasModificar(){
 
 function procesoRespuestaRellenarCitasMod(sDatos){
     $("#lstCitasMod").html(sDatos);
+
+}
+
+function cargarComboCitasBorrar(){
+
+    $.get("php/rellenarCitas.php",null,procesoRespuestaRellenarCitasBor,"html");
+}
+
+function procesoRespuestaRellenarCitasBor(sDatos){
+    $("#lstCitasBor").html(sDatos);
 
 }
 
