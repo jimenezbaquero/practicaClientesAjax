@@ -199,6 +199,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmModificarMaterial').show("normal");
         }
+        cargarComboMaterialesModificar();
     }
 
     function cargaFormularioModificarCita()
@@ -486,6 +487,16 @@ function cargarComboClientesModificar(){
 
 function procesoRespuestaRellenarClientesMod(sDatos){
     $("#lstClientesMod").html(sDatos);
+
+}
+
+function cargarComboMaterialesModificar(){
+
+    $.get("php/rellenarMateriales.php",null,procesoRespuestaRellenarMaterialesesMod,"html");
+}
+
+function procesoRespuestaRellenarMaterialesesMod(sDatos){
+    $("#lstMaterialesMod").html(sDatos);
 
 }
 
