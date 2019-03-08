@@ -18,7 +18,10 @@ $(function() {
     $("#formularioAsignarIncidencia").click(cargaFormularioAsignarIncidencia);
     $("#formularioCitasCliente").click(cargaFormularioCitasCliente);
     $("#formularioListadoCitas").click(cargaFormularioListadoCitas);
-    
+     $("#listaClientes").click(cargaListadoClientes);
+     $("#listaOperario").click(cargaListadoOperarios);
+     $("#listaCitas").click(cargaListadoCitas);
+     $("#listaMateriales").click(cargaListadoMateriales);
 
 
 
@@ -471,5 +474,66 @@ function cargarComboCitasModificar(){
 
 function procesoRespuestaRellenarCitasMod(sDatos){
     $("#lstCitasMod").html(sDatos);
+
+}
+
+//Listados
+//Listado Cliente
+function cargaListadoClientes(){
+     $(("#divGestion")).hide("normal");
+    $.get("./php/getClientes.php", respuestaListadoClientes, 'html');
+
+}
+
+function respuestaListadoClientes(sDatos, sStatus, oXHR) {
+    
+$("#listados").empty();
+   
+    $("<div>").html(sDatos).appendTo("#listados");
+
+}
+
+//Listado Operario
+function cargaListadoOperarios(){
+     $(("#divGestion")).hide("normal");
+    $.get("./php/getOperarios.php", respuestaListadoOperarios, 'html');
+
+}
+
+function respuestaListadoOperarios(sDatos, sStatus, oXHR) {
+    
+$("#listados").empty();
+   
+    $("<div>").html(sDatos).appendTo("#listados");
+
+}
+
+
+//Listado Citas
+function cargaListadoCitas(){
+     $(("#divGestion")).hide("normal");
+    $.get("./php/getCitas.php", respuestaListadoCitas, 'html');
+
+}
+
+function respuestaListadoCitas(sDatos, sStatus, oXHR) {
+    
+$("#listados").empty();
+   
+    $("<div>").html(sDatos).appendTo("#listados");
+
+}
+//Listado Material
+function cargaListadoMateriales(){
+     $(("#divGestion")).hide("normal");
+    $.get("./php/getMateriales.php", respuestaListadoMateriales, 'html');
+
+}
+
+function respuestaListadoMateriales(sDatos, sStatus, oXHR) {
+    
+$("#listados").empty();
+   
+    $("<div>").html(sDatos).appendTo("#listados");
 
 }
