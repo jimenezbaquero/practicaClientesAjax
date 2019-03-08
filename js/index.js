@@ -485,6 +485,7 @@ $(function() {
             // Lo muestro si está oculto
             $('#frmCitasCliente').show("normal");
         }
+        rellenarDesplegableDNI();
     }
 
 
@@ -635,19 +636,13 @@ $("#listados").empty();
 
 //rellenamos desplegable cliente
 
-function rellenarDesplegableDNI() {
-    $.get("./php/getDniCliente.php", null, respuestaComboDni, 'xml');
+function rellenarDesplegableDNI(){
+
+    $.get("php/rellenarClientes.php",null,procesoRespuestaRellenarClientesListado,"html");
 }
 
-function respuestaComboDni(oXML) {
-    var oOptions = oXML.querySelectorAll("citas");
-    var sOptions = "";
-
-    for (var i = 0; i < oOptions.length; i++) {
-        sOptions += '<option value="' + oOptions[i].querySelector("CLIENTE").textContent;
-        sOptions += '">' + oOptions[i].querySelector("CLIENTE").textContent;
-        sOptions += "</option>";
-    }
-
-    $("#lstDniCitaCli").html(sOptions);
+function procesoRespuestaRellenarClientesListado(sDatos){
+    $("#lstDniCitaCli").html(sDatos);
 }
+
+    
