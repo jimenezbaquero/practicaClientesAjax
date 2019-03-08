@@ -12,7 +12,8 @@ function listarCitasPorClientes(){
 function procesoRespuestaListadoFechas (oXML){
 
 	    var arrayCitas = oXML.querySelectorAll("CITA");
-    	var sTabla = "<table id='tablaFechas' class='table'><thead><tr><th>NUMERO</th><th>FECHA</th><th>CLIENTE</th><th>DESCRIPCION</th>";
+	    var sTitulo ="<center><h1>Listado de las citas del cliente: "+arrayCitas[0].querySelector("CLIENTE").textContent+"</h1></center>";
+    	var sTabla = "<table id='tablaFechas' class='table'><thead><tr><th>NUMERO</th><th>FECHA</th><th>DESCRIPCION</th>";
     	sTabla += "<th>OPERARIOS</th><th>MATERIALES</th></tr></thead>";
 
 
@@ -21,7 +22,7 @@ function procesoRespuestaListadoFechas (oXML){
 
         sTabla += '<tr><td>'+arrayCitas[i].querySelector("NUMERO").textContent+"</td>";
         sTabla += '<td>'+arrayCitas[i].querySelector("FECHA").textContent+"</td>";
-        sTabla += '<td>'+arrayCitas[i].querySelector("CLIENTE").textContent+"</td>";
+       
         sTabla += '<td>'+arrayCitas[i].querySelector("DESCRIPCION").textContent+"</td>";
         sTabla += '<td>';
 
@@ -44,7 +45,7 @@ function procesoRespuestaListadoFechas (oXML){
         sTabla += sMaterial+"</td></tr>";
     }
 
-    $("#formularios").html(sTabla);
+    $("#formularios").html(sTitulo+sTabla);
 
     $("#tablaFechas").DataTable();
     
