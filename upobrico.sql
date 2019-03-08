@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2019 a las 23:00:23
+-- Tiempo de generación: 08-03-2019 a las 23:13:39
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -95,11 +95,6 @@ CREATE TABLE `incidencias` (
 --
 
 INSERT INTO `incidencias` (`NUM_INCIDENCIA`, `COD_CITA`, `DESCRIPCION`) VALUES
-(0, 3, 'No estaban en casa'),
-(0, 5, 'Falta de materiales'),
-(0, 6, 'Descripcion erronea'),
-(0, 7, 'Descripcion erronea'),
-(0, 8, 'Falta de materiales'),
 (1, 4, 'No estaban en casa'),
 (2, 3, 'Falta de materiales'),
 (3, 5, 'Descripcion erronea'),
