@@ -28,7 +28,6 @@ if (!$resultado)
 	$todoBien=false;
 
 echo $sql;
-
 if ($todoBien){
     $respuesta["error"] = 0;
     $respuesta["mensaje"] = "Cliente modificado"; 
